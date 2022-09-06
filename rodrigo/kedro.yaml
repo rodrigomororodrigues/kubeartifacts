@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kedro
+spec:
+  selector:
+    matchLabels:
+      run: kedro
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: kedro
+    spec:
+      containers:
+      - name: kedro
+        image: docker.io/flipa/kedro:latest
+        ports:
+        - containerPort: 80
+        terminationMessagePath: "/tmp/my-log"
