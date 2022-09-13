@@ -1,0 +1,11 @@
+namespace: prometheus
+
+resources:
+  - alertmanager.yaml
+  - clusterrole.yaml
+  - clusterrolebinding.yaml
+  - namespace.yaml
+  - prometheus.yaml
+  - prometheusrule.yaml
+  - serviceaccount.yaml
+  - servicemonitor.yaml
