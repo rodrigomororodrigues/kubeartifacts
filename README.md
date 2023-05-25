@@ -1,10 +1,10 @@
 
-Nome                   | vCPUs      | Memoria RAM | IP            | S.O.¹           
----------- |:-----:    |:---------- |:-------------:|:---------------:
-kube-master.domain.net | 8          | 8096MB | 192.168.15.100 | Ubuntu-22.04.02 LTS
-kube-node1.domain.net  | 8          | 8096MB | 192.168.15.101 | Ubuntu-22.04.02 LTS
-kube-node2.domain.net  | 8          | 8096MB | 192.168.15.102 | Ubuntu-22.04.02 LTS
-kube-node3.domain.net  | 8          | 8096MB | 192.168.15.103 | Ubuntu-22.04.02 LTS
+Nome                   | vCPUs      | Memoria RAM   | IP               | S.O.¹           
+---------- |:-----:    |:---------- |:-------------:|:---------------: :---------------:
+kube-master.domain.net | 8          | 8096MB        | 192.168.15.100   | Ubuntu-22.04.02 LTS
+kube-node1.domain.net  | 8          | 8096MB        |192.168.15.101    | Ubuntu-22.04.02 LTS
+kube-node2.domain.net  | 8          | 8096MB        | 192.168.15.102   | Ubuntu-22.04.02 LTS
+kube-node3.domain.net  | 8          | 8096MB        | 192.168.15.103   | Ubuntu-22.04.02 LTS
 
 
 https://kubernetes.io/releases/#release-v1-27
