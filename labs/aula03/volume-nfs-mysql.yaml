@@ -11,5 +11,5 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Recycle
   nfs:
-    server: 192.168.15.102
+    server: 192.168.15.103
     path: /opt/data
