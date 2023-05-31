@@ -8,8 +8,8 @@ spec:
   capacity:
     storage: 10Gi
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   persistentVolumeReclaimPolicy: Recycle
   nfs:
-    server: 192.168.15.103
+    server: 192.168.15.2
     path: /opt/data
