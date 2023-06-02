@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - image: mysql:latest
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         name: mysql
         env:
         - name: MYSQL_DATABASE

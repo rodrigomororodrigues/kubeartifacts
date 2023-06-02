@@ -17,7 +17,8 @@ spec:
         app: app
     spec:
       containers:
-      - image: httpd
+      - image: wordpress:4.8-apache
+        imagePullPolicy: Always
         name: app
         env:
         - name: DB_HOST
