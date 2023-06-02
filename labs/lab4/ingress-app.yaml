@@ -15,4 +15,4 @@ spec:
             name: app
             port:
               number: 8080
-    host: app.4labs.example
+    host: app.domain.net
