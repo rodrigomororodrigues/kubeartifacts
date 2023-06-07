@@ -8,10 +8,10 @@ metadata:
 spec:
   tls:
   - hosts:
-      - nginx.4labs.example
+      - nginx.domain.net
     secretName: certificado-nginx-tls
   rules:
-  - host: nginx.4labs.example
+  - host: nginx.domain.net
     http:
       paths:
       - path: /

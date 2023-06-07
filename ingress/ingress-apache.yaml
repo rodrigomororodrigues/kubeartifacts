@@ -13,5 +13,5 @@ spec:
           service:
             name: apache
             port:
-              number: 80
-    host: apache.4labs.example
+              number: 8080
+    host: apache.domain.net

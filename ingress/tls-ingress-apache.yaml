@@ -8,10 +8,10 @@ metadata:
 spec:
   tls:
   - hosts:
-      - apache.4labs.example
+      - apache.domain.net
     secretName: certificado-apache-tls
   rules:
-  - host: apache.4labs.example
+  - host: apache.domain.net
     http:
       paths:
       - path: /
