@@ -7,17 +7,18 @@ metadata:
     kubernetes.io/ingress.class: nginx
 spec:
   tls:
-  - hosts:
-      - apache.domain.net
-    secretName: certificado-apache-tls
+    - hosts:
+        - apache.domain.net
+      secretName: certificado-apache-tls
+  ingressClassName: nginx
   rules:
-  - host: apache.domain.net
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: apache
-            port:
-              number: 80
+    - host: apache.domain.net
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: apache
+                port:
+                  number: 80

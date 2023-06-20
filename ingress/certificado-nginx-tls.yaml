@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: certificado-nginx-tls
+  namespace: default
+data:
+  tls.crt: nginx-tls.crt
+  tls.key: nginx-tls.key
+type: kubernetes.io/tls

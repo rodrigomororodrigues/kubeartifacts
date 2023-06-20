@@ -8,7 +8,7 @@ metadata:
   namespace: 4labs
 spec:
   rules:
-  - host: 4linux-app.4labs.example
+  - host: lab-app.domain.net
     http:
       paths:
       - backend:
@@ -17,5 +17,5 @@ spec:
         path: /
   tls:
   - hosts:
-    - 4linux-app.4labs.example
-    secretName: certificado1-4labs-tls
+    - lab-app.domain.net
+    secretName: certificado1-domain-tls

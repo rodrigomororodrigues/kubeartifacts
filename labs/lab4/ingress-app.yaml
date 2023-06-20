@@ -5,6 +5,7 @@ metadata:
   name: ingress-app
   namespace: 4labs
 spec:
+  ingressClassName: nginx
   rules:
   - http:
       paths:

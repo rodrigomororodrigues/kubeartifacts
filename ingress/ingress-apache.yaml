@@ -4,6 +4,7 @@ kind: Ingress
 metadata:
   name: ingress-apache
 spec:
+  ingressClassName: nginx
   rules:
   - http:
       paths:
