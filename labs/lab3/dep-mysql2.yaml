@@ -1,65 +1,66 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: wordpress-mysql
-  labels:
-    app: wordpress
-spec:
-  ports:
-    - port: 3306
-  selector:
-    app: wordpress
-    tier: mysql
-  clusterIP: None
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: mysql-pv-claim
-  labels:
-    app: wordpress
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 20Gi
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: wordpress-mysql
   labels:
-    app: wordpress
+    app: mysql
+  name: mysql
+  namespace: 4labs
 spec:
+  replicas: 1
   selector:
     matchLabels:
-      app: wordpress
-      tier: mysql
-  strategy:
-    type: Recreate
+      app: mysql
+  strategy: {}
   template:
     metadata:
       labels:
-        app: wordpress
-        tier: mysql
+        app: mysql
     spec:
       containers:
-      - image: mysql:5.6
+      - image: mysql:5.7
+        imagePullPolicy: Always
         name: mysql
         env:
+        - name: MYSQL_DATABASE
+          valueFrom:
+            configMapKeyRef:
+              name: mysql-configmaps
+              key: MYSQL_DATABASE   
+        - name: MYSQL_USER
+          valueFrom:
+            configMapKeyRef:
+              name: mysql-configmaps
+              key: MYSQL_USER   
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mysql-pass
-              key: password
-        ports:
-        - containerPort: 3306
-          name: mysql
+              name: mysql-secrets
+              key: MYSQL_ROOT_PASSWORD
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secrets
+              key: MYSQL_PASSWORD   
+
         volumeMounts:
-        - name: mysql-persistent-storage
+        - name: claim-nfs-mysql
           mountPath: /var/lib/mysql
+
+        - name: mysql-db-config
+          mountPath: /docker-entrypoint-initdb.d/
+
+        - name: dump-usuarios
+          mountPath: /dump/
+
       volumes:
-      - name: mysql-persistent-storage
-        persistentVolumeClaim:
-          claimName: mysql-pv-claim
+        - name: claim-nfs-mysql
+          persistentVolumeClaim:
+            claimName: claim-nfs-mysql
+
+        - name: mysql-db-config
+          configMap:
+            name: mysql-db-config
+
+        - name: dump-usuarios
+          configMap:
+            name: dump-usuarios

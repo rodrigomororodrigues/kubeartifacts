@@ -6,7 +6,7 @@ metadata:
   name: mysql
   namespace: 4labs
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
       app: mysql
@@ -17,7 +17,7 @@ spec:
         app: mysql
     spec:
       containers:
-      - image: mysql
+      - image: mysql:5.7
         imagePullPolicy: Always
         name: mysql
         env:

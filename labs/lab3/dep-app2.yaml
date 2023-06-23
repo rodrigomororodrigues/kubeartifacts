@@ -2,8 +2,10 @@ apiVersion: v1
 kind: Service
 metadata:
   name: wordpress
+  namespace: 4labs
   labels:
     app: wordpress
+    namespace: 4labs
 spec:
   ports:
     - port: 80
@@ -16,6 +18,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: wp-pv-claim
+  namespace: 4labs
   labels:
     app: wordpress
 spec:
@@ -31,6 +34,7 @@ metadata:
   name: wordpress
   labels:
     app: wordpress
+  namespace: 4labs
 spec:
   selector:
     matchLabels:
@@ -48,13 +52,31 @@ spec:
       - image: wordpress:4.8-apache
         name: wordpress
         env:
-        - name: WORDPRESS_DB_HOST
-          value: wordpress-mysql
-        - name: WORDPRESS_DB_PASSWORD
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: app-configmaps
+              key: DB_HOST
+        - name: DB_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: app-configmaps
+              key: DB_PORT
+        - name: DB_USER
+          valueFrom:
+            configMapKeyRef:
+              name: app-configmaps
+              key: DB_USER
+        - name: DB_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: app-configmaps
+              key: DB_NAME
+        - name: DB_PASS
           valueFrom:
             secretKeyRef:
-              name: mysql-pass
-              key: password
+              name: app-secrets
+              key: DB_PASS
         ports:
         - containerPort: 80
           name: wordpress

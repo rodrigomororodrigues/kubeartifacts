@@ -17,7 +17,7 @@ spec:
         app: app
     spec:
       containers:
-      - image: httpd
+      - image: wordpress
         imagePullPolicy: Always
         name: app
         env:
