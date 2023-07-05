@@ -6,7 +6,7 @@ metadata:
   namespace: 4labs
 spec:
   hard:
-    requests.cpu: "0.8"
+    requests.cpu: "0.9"
     requests.memory: 512Mi
     limits.cpu: "1.5"
-    limits.memory: 1200Mi
+    limits.memory: 2000Mi

@@ -14,7 +14,7 @@ spec:
 #    - hard
 #    - nfsvers=4.1
   nfs:
-    server: 192.168.15.3
+    server: 192.168.15.103
     path: /opt/app
 
 
