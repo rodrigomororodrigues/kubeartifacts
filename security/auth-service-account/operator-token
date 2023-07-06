@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: operator-token
+  annotations:
+    kubernetes.io/service-account.name: operator
+type: kubernetes.io/service-account-token
