@@ -18,7 +18,7 @@ spec:
         app: app
     spec:
       containers:
-      - image: registry:5000/4linux-app:latest
+      - image: httpd:latest
         name: app
         env:
         - name: DB_HOST
