@@ -36,6 +36,7 @@ metadata:
     app: wordpress
   namespace: 4labs
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: wordpress

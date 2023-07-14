@@ -9,7 +9,7 @@ spec:
     storage: 10Gi
   accessModes:
     - ReadWriteMany
-  persistentVolumeReclaimPolicy: Recycle
+  persistentVolumeReclaimPolicy: Retain
 #  mountOptions:
 #    - hard
 #    - nfsvers=4.1
