@@ -6,7 +6,7 @@ metadata:
   name: mysql
   namespace: 4labs
 spec:
-  replicas: 2
+  replicas: 
   selector:
     matchLabels:
       app: mysql
