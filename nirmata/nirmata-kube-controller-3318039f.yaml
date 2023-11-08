@@ -281,12 +281,12 @@ metadata:
   name: "nirmata-kube-controller-config"
   namespace: "nirmata"
 data:
-  IgnoreFields: "metadata.managedFields"
-  FilterPatches: "/metadata/resourceVersion\n/metadata/generation\n/results/*/timestamp/*"
-  IgnoreEvents: "Normal.PolicyApplied.*"
   WatchedResources: "events.v1.\npolicyreports.v1alpha2.wgpolicyk8s.io\nclusterpolicyreports.v1alpha2.wgpolicyk8s.io\n\
     policies.v1.kyverno.io\nclusterpolicies.v1.kyverno.io\npolicyexceptions.v2alpha1.kyverno.io"
   FilterEvents: "Warning.PolicyViolation.*,Normal.PolicySkipped.*"
+  IgnoreFields: "metadata.managedFields"
+  FilterPatches: "/metadata/resourceVersion\n/metadata/generation\n/results/*/timestamp/*"
+  IgnoreEvents: "Normal.PolicyApplied.*"
 ---
 apiVersion: "apps/v1"
 kind: "Deployment"
@@ -320,7 +320,7 @@ spec:
         - "/nirmata-kube-controller"
         env:
         - name: "TOKEN"
-          value: "4e039683-8ed6-4ad0-82eb-e3b65083ff0c"
+          value: "3318039f-4167-4d56-89ed-4b74f98093f0"
         - name: "URL"
           value: "wss://www.nirmata.io/tunnels"
         image: "ghcr.io/nirmata/nirmata-kube-controller:v3.9.9"
@@ -411,7 +411,7 @@ data:
       prometheusremotewrite:
         endpoint: https://www.nirmata.io/host-gateway/metrics-receiver
         external_labels:
-          clusterId: 4e039683-8ed6-4ad0-82eb-e3b65083ff0c
+          clusterId: 3318039f-4167-4d56-89ed-4b74f98093f0
         remote_write_queue:
           queue_size: 2000
           num_consumers: 1
