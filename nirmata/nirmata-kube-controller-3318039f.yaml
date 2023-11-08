@@ -281,12 +281,12 @@ metadata:
   name: "nirmata-kube-controller-config"
   namespace: "nirmata"
 data:
+  IgnoreEvents: "Normal.PolicyApplied.*"
+  FilterPatches: "/metadata/resourceVersion\n/metadata/generation\n/results/*/timestamp/*"
+  IgnoreFields: "metadata.managedFields"
+  FilterEvents: "Warning.PolicyViolation.*,Normal.PolicySkipped.*"
   WatchedResources: "events.v1.\npolicyreports.v1alpha2.wgpolicyk8s.io\nclusterpolicyreports.v1alpha2.wgpolicyk8s.io\n\
     policies.v1.kyverno.io\nclusterpolicies.v1.kyverno.io\npolicyexceptions.v2alpha1.kyverno.io"
-  FilterEvents: "Warning.PolicyViolation.*,Normal.PolicySkipped.*"
-  IgnoreFields: "metadata.managedFields"
-  FilterPatches: "/metadata/resourceVersion\n/metadata/generation\n/results/*/timestamp/*"
-  IgnoreEvents: "Normal.PolicyApplied.*"
 ---
 apiVersion: "apps/v1"
 kind: "Deployment"
