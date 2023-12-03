@@ -1,0 +1,41 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: my-datadog-operator
+  namespace: datadog
+spec:
+  channel: stable
+  name: datadog-operator
+  source: operatorhubio-catalog
+  sourceNamespace: datadog
+  config:
+    env:
+      - name: API-key
+        valueFrom:
+          secretKeyRef: 
+             key: API-key
+             name: datadog-secret
+      - name: APP-key
+        valueFrom:
+          secretKeyRef: 
+            key: APP-key
+            name: datadog-secret
+  features:
+    eventCollection:
+      collectKubernetesEvents: true
+    kubeStateMetricsCore:
+      enabled: true
+    clusterChecks:
+      enabled: true
+    npm:
+      enabled: true
+    logCollection:
+      enabled: true
+      containerCollectAll: true
+    liveContainerCollection:
+      enabled: true
+    orchestratorExplorer:
+      enabled: true
+    externalMetricsServer:
+      enabled: true
+      useDatadogMetrics: true
