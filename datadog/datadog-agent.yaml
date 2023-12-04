@@ -7,9 +7,16 @@ spec:
   #  * Agents and Datadog (API/APP key)
   #  * Node Agent and Cluster Agent (Token)
   global:
+    clusterName: kubemoro
+    site: us5.datadoghq.com
     credentials:
-      apiKey: 0104cf5b522d27accc1c8ab5ca5226fa
-      appKey: 0104cf5b522d27accc1c8ab5ca5226fa
+      apiSecret:
+        secretName: datadog-secret
+        keyName: API-key
+      apiSecret:
+        secretName: datadog-secret
+        keyName: APP-key
+
   override:
     # Node Agent configuration
     nodeAgent:

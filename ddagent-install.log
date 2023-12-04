@@ -5,12 +5,11 @@
 * Installing apt-transport-https, curl and gnupg
 [0m
 Hit:1 https://download.docker.com/linux/ubuntu jammy InRelease
-Hit:2 http://archive.ubuntu.com/ubuntu jammy InRelease
-Get:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
+Hit:3 http://archive.ubuntu.com/ubuntu jammy InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
 Hit:5 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
-Get:6 http://archive.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
-Get:4 https://packages.cloud.google.com/apt kubernetes-xenial InRelease [8.993 B]
-Fetched 238 kB in 3s (81,5 kB/s)
+Hit:2 https://packages.cloud.google.com/apt kubernetes-xenial InRelease
+Hit:6 http://archive.ubuntu.com/ubuntu jammy-security InRelease
 Reading package lists...
 W: https://download.docker.com/linux/ubuntu/dists/jammy/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
 Reading package lists...
@@ -19,14 +18,23 @@ Reading state information...
 curl is already the newest version (7.81.0-1ubuntu1.14).
 gnupg is already the newest version (2.2.27-3ubuntu2.1).
 gnupg set to manually installed.
-apt-transport-https is already the newest version (2.4.11).
-0 upgraded, 0 newly installed, 0 to remove and 5 not upgraded.
+The following packages will be upgraded:
+  apt-transport-https
+1 upgraded, 0 newly installed, 0 to remove and 24 not upgraded.
+Need to get 1.510 B of archives.
+After this operation, 1.024 B of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 apt-transport-https all 2.4.11 [1.510 B]
+Fetched 1.510 B in 0s (3.461 B/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 205322 files and directories currently installed.)
+Preparing to unpack .../apt-transport-https_2.4.11_all.deb ...
+Unpacking apt-transport-https (2.4.11) over (2.4.10) ...
+Setting up apt-transport-https (2.4.11) ...
 [34m
 * Installing APT package sources for Datadog
 [0m
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  6226  100  6226    0     0   6351      0 --:--:-- --:--:-- --:--:--  6353100  6226  100  6226    0     0   6341      0 --:--:-- --:--:-- --:--:--  6340
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  6226  100  6226    0     0  11150      0 --:--:-- --:--:-- --:--:-- 11137
 gpg: directory '/root/.gnupg' created
 gpg: /root/.gnupg/trustdb.gpg: trustdb created
 gpg: key 32637D44F14F620E: public key "Datadog, Inc. Master key (2020-09-08) <package+masterkey@datadoghq.com>" imported
@@ -34,19 +42,19 @@ gpg: Total number processed: 1
 gpg:               imported: 1
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1713  100  1713    0     0   2335      0 --:--:-- --:--:-- --:--:--  2336100  1713  100  1713    0     0   2332      0 --:--:-- --:--:-- --:--:--  2330
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  1713  100  1713    0     0   3204      0 --:--:-- --:--:-- --:--:--  3201100  1713  100  1713    0     0   3202      0 --:--:-- --:--:-- --:--:--  3201
 gpg: key E6266D4AC0962C7D: public key "Datadog, Inc. APT key (2023-04-20) (APT key) <package+aptkey@datadoghq.com>" imported
 gpg: Total number processed: 1
 gpg:               imported: 1
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  6226  100  6226    0     0   9151      0 --:--:-- --:--:-- --:--:--  9169
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  6226  100  6226    0     0  11626      0 --:--:-- --:--:-- --:--:-- 11637
 gpg: key 32637D44F14F620E: "Datadog, Inc. Master key (2020-09-08) <package+masterkey@datadoghq.com>" not changed
 gpg: Total number processed: 1
 gpg:              unchanged: 1
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  9001  100  9001    0     0  77559      0 --:--:-- --:--:-- --:--:-- 78269
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  9001  100  9001    0     0  16966      0 --:--:-- --:--:-- --:--:-- 16951100  9001  100  9001    0     0  16953      0 --:--:-- --:--:-- --:--:-- 16951
 gpg: key D3A80E30382E94DE: public key "Datadog, Inc <package@datadoghq.com>" imported
 gpg: Total number processed: 1
 gpg:               imported: 1
@@ -56,64 +64,28 @@ Get:3 https://apt.datadoghq.com stable Release.gpg [801 B]
 Get:4 https://apt.datadoghq.com stable/7 all Packages [1.073 B]
 Get:5 https://apt.datadoghq.com stable/7 amd64 Packages [52,3 kB]
 Get:6 https://apt.datadoghq.com stable/7 i386 Packages [1.073 B]
-Fetched 73,0 kB in 1s (73,1 kB/s)
+Fetched 73,0 kB in 0s (324 kB/s)
 Reading package lists...
-  [33mInstalling package(s): datadog-agent datadog-signing-keys datadog-apm-inject datadog-apm-library-all
+  [33mInstalling package(s): datadog-agent datadog-signing-keys
 [0m
 Reading package lists...
 Building dependency tree...
 Reading state information...
-The following additional packages will be installed:
-  datadog-apm-library-dotnet datadog-apm-library-java datadog-apm-library-js
-  datadog-apm-library-python datadog-apm-library-ruby
 The following NEW packages will be installed:
-  datadog-agent datadog-apm-inject datadog-apm-library-all
-  datadog-apm-library-dotnet datadog-apm-library-java datadog-apm-library-js
-  datadog-apm-library-python datadog-apm-library-ruby datadog-signing-keys
-0 upgraded, 9 newly installed, 0 to remove and 5 not upgraded.
-Need to get 629 MB of archives.
-After this operation, 1.917 MB of additional disk space will be used.
-Get:1 https://apt.datadoghq.com stable/7 amd64 datadog-apm-inject amd64 0.11.1-1 [35,1 MB]
-Get:2 https://apt.datadoghq.com stable/7 amd64 datadog-apm-library-java amd64 1.24.2-1 [25,3 MB]
-Get:3 https://apt.datadoghq.com stable/7 amd64 datadog-apm-library-js amd64 4.11.1-1 [17,9 MB]
-Get:4 https://apt.datadoghq.com stable/7 amd64 datadog-apm-library-dotnet amd64 2.42.0-1 [20,2 MB]
-Get:5 https://apt.datadoghq.com stable/7 amd64 datadog-apm-library-python amd64 2.2.1-1 [66,5 MB]
-Get:6 https://apt.datadoghq.com stable/7 amd64 datadog-apm-library-ruby amd64 1.16.2-1 [51,3 MB]
-Get:7 https://apt.datadoghq.com stable/7 amd64 datadog-apm-library-all all 0.4-1 [2.034 B]
-Get:8 https://apt.datadoghq.com stable/7 amd64 datadog-agent amd64 1:7.49.1-1 [412 MB]
-Get:9 https://apt.datadoghq.com stable/7 amd64 datadog-signing-keys all 1:1.3.1-1 [22,3 kB]
-Fetched 629 MB in 19s (33,0 MB/s)
-Selecting previously unselected package datadog-apm-inject.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 205375 files and directories currently installed.)
-Preparing to unpack .../0-datadog-apm-inject_0.11.1-1_amd64.deb ...
-Unpacking datadog-apm-inject (0.11.1-1) ...
-Selecting previously unselected package datadog-apm-library-java.
-Preparing to unpack .../1-datadog-apm-library-java_1.24.2-1_amd64.deb ...
-Unpacking datadog-apm-library-java (1.24.2-1) ...
-Selecting previously unselected package datadog-apm-library-js.
-Preparing to unpack .../2-datadog-apm-library-js_4.11.1-1_amd64.deb ...
-Unpacking datadog-apm-library-js (4.11.1-1) ...
-Selecting previously unselected package datadog-apm-library-dotnet.
-Preparing to unpack .../3-datadog-apm-library-dotnet_2.42.0-1_amd64.deb ...
-Unpacking datadog-apm-library-dotnet (2.42.0-1) ...
-Selecting previously unselected package datadog-apm-library-python.
-Preparing to unpack .../4-datadog-apm-library-python_2.2.1-1_amd64.deb ...
-Unpacking datadog-apm-library-python (2.2.1-1) ...
-Selecting previously unselected package datadog-apm-library-ruby.
-Preparing to unpack .../5-datadog-apm-library-ruby_1.16.2-1_amd64.deb ...
-Unpacking datadog-apm-library-ruby (1.16.2-1) ...
-Selecting previously unselected package datadog-apm-library-all.
-Preparing to unpack .../6-datadog-apm-library-all_0.4-1_all.deb ...
-Unpacking datadog-apm-library-all (0.4-1) ...
+  datadog-agent datadog-signing-keys
+0 upgraded, 2 newly installed, 0 to remove and 24 not upgraded.
+Need to get 412 MB of archives.
+After this operation, 1.329 MB of additional disk space will be used.
+Get:1 https://apt.datadoghq.com stable/7 amd64 datadog-agent amd64 1:7.49.1-1 [412 MB]
+Get:2 https://apt.datadoghq.com stable/7 amd64 datadog-signing-keys all 1:1.3.1-1 [22,3 kB]
+Fetched 412 MB in 12s (34,4 MB/s)
 Selecting previously unselected package datadog-agent.
-Preparing to unpack .../7-datadog-agent_1%3a7.49.1-1_amd64.deb ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 205322 files and directories currently installed.)
+Preparing to unpack .../datadog-agent_1%3a7.49.1-1_amd64.deb ...
 Unpacking datadog-agent (1:7.49.1-1) ...
 Selecting previously unselected package datadog-signing-keys.
-Preparing to unpack .../8-datadog-signing-keys_1%3a1.3.1-1_all.deb ...
+Preparing to unpack .../datadog-signing-keys_1%3a1.3.1-1_all.deb ...
 Unpacking datadog-signing-keys (1:1.3.1-1) ...
-Setting up datadog-apm-library-dotnet (2.42.0-1) ...
-+ mkdir -p /var/log/datadog/dotnet
-+ chmod a+rwx /var/log/datadog/dotnet
 Setting up datadog-agent (1:7.49.1-1) ...
 Creating dd-agent group
 Creating dd-agent user
@@ -123,14 +95,7 @@ Created symlink /etc/systemd/system/multi-user.target.wants/datadog-agent-proces
 Created symlink /etc/systemd/system/multi-user.target.wants/datadog-agent-trace.service → /lib/systemd/system/datadog-agent-trace.service.
 Created symlink /etc/systemd/system/multi-user.target.wants/datadog-agent-security.service → /lib/systemd/system/datadog-agent-security.service.
 No datadog.yaml file detected, not starting the agent
-Setting up datadog-apm-library-python (2.2.1-1) ...
-Setting up datadog-apm-inject (0.11.1-1) ...
-This software installed by this package is in beta. It is not meant for general use at this time.
-Setting up datadog-apm-library-java (1.24.2-1) ...
-Setting up datadog-apm-library-ruby (1.16.2-1) ...
-Setting up datadog-apm-library-js (4.11.1-1) ...
 Setting up datadog-signing-keys (1:1.3.1-1) ...
-Setting up datadog-apm-library-all (0.4-1) ...
 W: --force-yes is deprecated, use one of the options starting with --allow instead.
 [34m
 * Adding your API key to the Datadog Agent configuration: /etc/datadog-agent/datadog.yaml
@@ -138,8 +103,6 @@ W: --force-yes is deprecated, use one of the options starting with --allow inste
 [34m
 * Setting SITE in the Datadog Agent configuration: /etc/datadog-agent/datadog.yaml
 [0m
-Added preload config to /etc/ld.so.preload
-Added UDS config to /etc/datadog-agent/datadog.yaml
 /usr/bin/systemctl
 [34m* Starting the Datadog Agent...
 [0m
