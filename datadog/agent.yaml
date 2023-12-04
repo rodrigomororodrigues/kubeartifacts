@@ -5,7 +5,7 @@ metadata:
   namespace: datadog
 spec:
   global:
-    clusterName: kubernetes-admin@kubernetes
+    clusterName: kuberdrigomro
     registry: gcr.io/datadoghq
     site: us5.datadoghq.com
     credentials:

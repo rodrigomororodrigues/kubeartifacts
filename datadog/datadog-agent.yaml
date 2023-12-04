@@ -1,0 +1,45 @@
+apiVersion: datadoghq.com/v2alpha1
+kind: DatadogAgent
+metadata:
+  name: datadog
+spec:
+  # Credentials to communicate between:
+  #  * Agents and Datadog (API/APP key)
+  #  * Node Agent and Cluster Agent (Token)
+  global:
+    credentials:
+      apiKey: 0104cf5b522d27accc1c8ab5ca5226fa
+      appKey: 0104cf5b522d27accc1c8ab5ca5226fa
+  override:
+    # Node Agent configuration
+    nodeAgent:
+      tolerations:
+        - operator: Exists
+
+    # Cluster Agent configuration
+    clusterAgent:
+      replicas: 4
+
+  # Enable Features
+
+  features:
+    eventCollection:
+      collectKubernetesEvents: true
+    logCollection:
+      enabled: true
+      containerCollectAll: true
+    usm:
+      enabled: true
+    npm:
+      enabled: true
+    kubeStateMetricsCore:
+      enabled: true
+    kubeStateMetricsCore:
+      enabled: true
+    liveContainerCollection:
+      enabled: true
+    orchestratorExplorer:
+      enabled: true
+    externalMetricsServer:
+      enabled: true
+      useDatadogMetrics: true

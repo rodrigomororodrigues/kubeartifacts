@@ -1,14 +1,13 @@
----
 apiVersion: extensions/v1beta1
 kind: DaemonSet
 metadata:
   name: datadog-agent
-  namespace: datadog
 spec:
   template:
     spec:
       containers:
         - name: datadog-agent
+          # ...
           env:
             - name: DD_CRI_SOCKET_PATH
               value: /run/containerd/containerd.sock
@@ -24,4 +23,4 @@ spec:
               name: containerdsocket
             - hostPath:
                 path: /run
-              name: run
+              name: var-run
