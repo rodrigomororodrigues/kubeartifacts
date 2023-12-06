@@ -1,13 +1,13 @@
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
-  name: my-datadog-operator
-  namespace: datadog
-spec:
-  channel: stable
   name: datadog-operator
-  source: operatorhubio-catalog
-  sourceNamespace: datadog
+#  namespace: default 
+spec:
+#  channel: stable
+#  name: datadog-operator
+#  source: operatorhubio-catalog
+#  sourceNamespace: default
   config:
     env:
       - name: API-key

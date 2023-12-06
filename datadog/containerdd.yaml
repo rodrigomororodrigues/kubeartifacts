@@ -9,18 +9,18 @@ spec:
         - name: datadog-agent
           # ...
           env:
-            - name: DD_CRI_SOCKET_PATH
-              value: /run/containerd/containerd.sock
+            - name: containerd
+              value: /var/run/containerd/containerd.sock
           volumeMounts:
             - name: containerdsocket
-              mountPath: /run/containerd/containerd.sock
-            - mountPath: /host/run
+              mountPath: /var/run/containerd/containerd.sock
+            - mountPath: /host/var/run
               name: var-run
               readOnly: true
           volumes:
             - hostPath:
-                path: /run/containerd/containerd.sock
+                path: /var/run/containerd/containerd.sock
               name: containerdsocket
             - hostPath:
-                path: /run
+                path: /var/run
               name: var-run

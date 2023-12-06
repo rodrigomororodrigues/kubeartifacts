@@ -6,6 +6,7 @@ spec:
   # Credentials to communicate between:
   #  * Agents and Datadog (API/APP key)
   #  * Node Agent and Cluster Agent (Token)
+
   global:
     clusterName: kubemoro
     site: us5.datadoghq.com
@@ -13,23 +14,23 @@ spec:
       apiSecret:
         secretName: datadog-secret
         keyName: API-key
-      apiSecret:
+      appSecret:
         secretName: datadog-secret
         keyName: APP-key
 
   override:
     # Node Agent configuration
-    nodeAgent:
-      tolerations:
-        - operator: Exists
+    #nodeAgent:
+    #  tolerations:
+    #    - operator: Exists
 
     # Cluster Agent configuration
     clusterAgent:
-      replicas: 4
-
+      replicas: 2
   # Enable Features
 
   features:
+
     eventCollection:
       collectKubernetesEvents: true
     logCollection:
@@ -50,3 +51,4 @@ spec:
     externalMetricsServer:
       enabled: true
       useDatadogMetrics: true
+      
