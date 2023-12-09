@@ -1,4 +1,12 @@
+#Upgrade Kubernetes
+
 kubelet
 kubectl 
 kubelet
 kubeadm
+
+
+#Certificates:
+
+.crt
+.key
