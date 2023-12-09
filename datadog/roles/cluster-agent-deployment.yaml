@@ -1,8 +1,0 @@
-- name: DD_ADMISSION_CONTROLLER_ENABLED
-  value: "true"
-- name: DD_ADMISSION_CONTROLLER_SERVICE_NAME
-  value: "datadog-cluster-agent-admission-controller"
-
-# Uncomment this to configure APM tracers automatically (see below)
-# - name: DD_ADMISSION_CONTROLLER_MUTATE_UNLABELLED
-#   value: "true"

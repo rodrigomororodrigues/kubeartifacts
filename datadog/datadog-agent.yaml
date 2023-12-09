@@ -17,16 +17,21 @@ spec:
       appSecret:
         secretName: datadog-secret
         keyName: APP-key
+    kubelet:
+        tlsVerify: false
 
   override:
     # Node Agent configuration
-    #nodeAgent:
-    #  tolerations:
-    #    - operator: Exists
+    nodeAgent:
+      tolerations:
+        - operator: Exists
+    clusterAgent:
+      containers:
+        cluster-agent:
 
     # Cluster Agent configuration
     clusterAgent:
-      replicas: 2
+      replicas: 4
   # Enable Features
 
   features:
@@ -51,4 +56,8 @@ spec:
     externalMetricsServer:
       enabled: true
       useDatadogMetrics: true
+    apm:
+      enabled: true
+      unixDomainSocketConfig:
+        path: /var/run/datadog/apm.sock # default
       

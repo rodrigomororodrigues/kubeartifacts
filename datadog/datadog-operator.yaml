@@ -4,10 +4,10 @@ metadata:
   name: datadog-operator
 #  namespace: default 
 spec:
-#  channel: stable
-#  name: datadog-operator
-#  source: operatorhubio-catalog
-#  sourceNamespace: default
+  channel: stable
+  name: datadog-operator
+  source: operatorhubio-catalog
+  sourceNamespace: default
   config:
     env:
       - name: API-key
