@@ -3,27 +3,6 @@ kind: DatadogAgent
 metadata:
   name: datadog
 spec:
-  template:
-    spec:
-      containers:
-        - name: datadog-agent
-          # ...
-          env:
-            - name: DD_CRI_SOCKET_PATH
-              value: /run/containerd/containerd.sock
-          volumeMounts:
-            - name: containerdsocket
-              mountPath: /run/containerd/containerd.sock
-            - mountPath: /run
-              name: var-run
-              readOnly: true
-          volumes:
-            - hostPath:
-                path: /run/containerd/containerd.sock
-              name: containerdsocket
-            - hostPath:
-                path: /run
-              name: run
   # Credentials to communicate between:
   #  * Agents and Datadog (API/APP key)
   #  * Node Agent and Cluster Agent (Token)
@@ -38,21 +17,16 @@ spec:
       appSecret:
         secretName: datadog-secret
         keyName: APP-key
-    kubelet:
-        tlsVerify: false
 
   override:
     # Node Agent configuration
     nodeAgent:
       tolerations:
         - operator: Exists
-    clusterAgent:
-      containers:
-        cluster-agent:
 
     # Cluster Agent configuration
     clusterAgent:
-      replicas: 4
+      replicas: 2
   # Enable Features
 
   features:
@@ -77,8 +51,3 @@ spec:
     externalMetricsServer:
       enabled: true
       useDatadogMetrics: true
-    apm:
-      enabled: true
-      unixDomainSocketConfig:
-        path: /var/run/datadog/apm.sock # default
-      
