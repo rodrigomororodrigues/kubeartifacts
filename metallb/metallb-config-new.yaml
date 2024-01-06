@@ -1,0 +1,23 @@
+# https://metallb.universe.tf/configuration/migration_to_crds/
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: metallb
+  name: config
+data:
+  config: |
+    peers:
+    - my-asn: 64512
+      peer-asn: 64512
+      peer-address: 10.96.0.100
+    address-pools:
+    - name: my-ip-space
+      protocol: bgp
+      addresses:
+      - 192.168.68.0/22
+      bgp-advertisements:
+      - aggregation-length: 32
+        localpref: 100
+        communities:
+        - 64512:1234

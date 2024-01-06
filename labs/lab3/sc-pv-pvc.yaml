@@ -5,6 +5,6 @@ metadata:
   namespace: 4labs
 provisioner: kubernetes.io/no-provisioner
 parameters:
-  server: 192.168.15.103
+  server: 192.168.68.103
   path: /opt/app
   readOnly: "false"
