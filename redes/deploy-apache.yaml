@@ -29,7 +29,7 @@ spec:
               - key: kubernetes.io/hostname
                 operator: In
                 values:
-                - kube-node1
+                - kube-node1.domain.net
           - weight: 50
             preference:
               matchExpressions:
