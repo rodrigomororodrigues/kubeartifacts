@@ -17,13 +17,13 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: wp-pv-claim
+  name: wordpress-pv-claim
   namespace: 4labs
   labels:
     app: wordpress
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
       storage: 20Gi
@@ -87,6 +87,6 @@ spec:
       volumes:
       - name: wordpress-persistent-storage
         persistentVolumeClaim:
-          claimName: wp-pv-claim
+          claimName: wordpress-pv-claim
 
           

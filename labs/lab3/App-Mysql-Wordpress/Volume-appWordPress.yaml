@@ -8,8 +8,8 @@ spec:
     storage: 20Gi
   volumeMode: Filesystem
   accessModes:
-    - ReadWriteMany
-  persistentVolumeReclaimPolicy: Recycle
+    - ReadWriteOnce  # Change to match PVC or vice versa
+  persistentVolumeReclaimPolicy: Retain  # Consider using Retain or Delete
   nfs:
     server: 192.168.68.103
     path: /opt/app
