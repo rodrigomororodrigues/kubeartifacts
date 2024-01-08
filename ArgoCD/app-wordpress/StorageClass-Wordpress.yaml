@@ -1,0 +1,10 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name:  local-storage
+  namespace: 4labs
+provisioner: kubernetes.io/no-provisioner
+parameters:
+  server: 192.168.68.103
+  path: /opt/app
+  readOnly: "false"
