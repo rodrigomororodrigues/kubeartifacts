@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FullStackApp-Challenge", "FullStackApp-Challenge", "{06FD940C-AD53-4CCF-AF50-F6D8EC82DA2C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApi", "FullStackApp-Challenge\TestApi\TestApi.csproj", "{F2884476-C2DB-4393-8B2A-621A00D7D849}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F2884476-C2DB-4393-8B2A-621A00D7D849}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2884476-C2DB-4393-8B2A-621A00D7D849}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2884476-C2DB-4393-8B2A-621A00D7D849}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2884476-C2DB-4393-8B2A-621A00D7D849}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F2884476-C2DB-4393-8B2A-621A00D7D849} = {06FD940C-AD53-4CCF-AF50-F6D8EC82DA2C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DA6A9FF3-8238-426B-AA4D-B75D67DB7729}
+	EndGlobalSection
+EndGlobal
