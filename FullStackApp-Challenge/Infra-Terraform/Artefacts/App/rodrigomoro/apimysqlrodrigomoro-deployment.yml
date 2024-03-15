@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apimysqlrodrigomoro
+  namespace: apimysqlapplication
+  labels:
+    app: apimysqlrodrigomoro
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apimysqlrodrigomoro
+  template:
+    metadata:
+      labels:
+        app: apimysqlrodrigomoro
+    spec:
+      containers:
+      - name: dotnetcore-api-container
+        image: docker.io/rodrigomoro/apimysqlrodrigomoro:latest  # Replace with your actual image
+        ports:
+        - containerPort: 5000 # Adjusted to match the application's listening port

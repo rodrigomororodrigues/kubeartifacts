@@ -1,4 +1,4 @@
-USE php;
+USE productsdb;
 
 DROP TABLE IF EXISTS usuarios;
 
