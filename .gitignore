@@ -10,7 +10,7 @@ kubeadm
 
 .crt
 .key
-
+.pub
 # Terraform
 **/.terraform/*
 *.tfstate

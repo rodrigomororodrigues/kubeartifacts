@@ -1,0 +1,59 @@
+version: '3.4'
+
+services:
+  apimysqlrodrigomoro:
+    # Use an environment variable for the image name, with a default value
+    image: ${DOCKER_REGISTRY-}apimysqlrodrigomoro
+    container_name: apiaspn
+
+    # Define build context and Dockerfile location
+    build:
+      context: .
+      dockerfile: apimysqlrodrigomoro/Dockerfile
+
+    # Specify dependencies to ensure database service is started first
+    depends_on: 
+      - database
+
+    # Map port 5000 on the host to port 80 in the container
+    ports:
+      - "5000:80"
+
+    # Ensure the container always restarts unless stopped manually
+    restart: always
+
+    # Environment variables passed to the container
+    environment: 
+      - DBHOST=database
+      - ASPNETCORE_ENVIRONMENT=Development
+
+  database:
+    # Specify the MySQL image version explicitly for reproducibility
+    image: mysql:8.0.36-debian
+    container_name: mysqldb
+
+    # Expose MySQL's default port on the host for local connections
+    ports:
+      - "3306:3306"
+
+    # 'expose' is not strictly necessary here since 'ports' makes it accessible
+    expose: 
+      - 3306
+
+    # Mount a volume for MySQL data persistence
+    volumes:
+      - db-volume:/var/lib/mysql
+
+    # Ensure the container always restarts unless stopped manually
+    restart: always
+
+    # Define MySQL environment variables (Consider using Docker Secrets for sensitive data)
+    environment: 
+      MYSQL_ROOT_PASSWORD: hw8vup5e  # Consider more secure handling of passwords
+      MYSQL_USER: mac
+      MYSQL_PASSWORD: hw8vup5e
+      MYSQL_DATABASE: productsdb
+
+# Define named volumes used by the services
+volumes:
+  db-volume:

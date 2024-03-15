@@ -1,0 +1,45 @@
+# Use the official .NET 5.0 runtime image from Microsoft as the base image
+FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
+
+# Create a non-root user for running the application
+RUN groupadd -r myuser && useradd -r -g myuser myuser
+
+# Use the non-root user to run the application
+USER myuser
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Expose port 80 for the application
+EXPOSE 80
+
+# Use the official .NET 5.0 SDK image from Microsoft to build the application
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
+
+# Set the working directory for the build context
+WORKDIR /src
+
+# Copy the CSProj file and restore any dependencies (via NuGet)
+COPY ["apimysqlrodrigomoro/apimysqlrodrigomoro.csproj", "apimysqlrodrigomoro/"]
+RUN dotnet restore "apimysqlrodrigomoro/apimysqlrodrigomoro.csproj"
+
+# Copy the project files and build the application
+COPY . .
+WORKDIR "/src/apimysqlrodrigomoro"
+RUN dotnet build "apimysqlrodrigomoro.csproj" -c Release -o /app/build
+
+# Publish the application to the build directory
+FROM build AS publish
+RUN dotnet publish "apimysqlrodrigomoro.csproj" -c Release -o /app/publish
+
+# Use the base image again for the final image
+FROM base AS final
+
+# Set the working directory to /app
+WORKDIR /app
+
+# Copy the published application from the previous stage to the working directory
+COPY --from=publish /app/publish .
+
+# Set the command to run the application
+ENTRYPOINT ["dotnet", "apimysqlrodrigomoro.dll"]

@@ -1,0 +1,47 @@
+# Java IDE artifacts
+**/.classpath       # Ignore Eclipse classpath file
+**/.project         # Ignore Eclipse project file
+**/.settings        # Ignore directory containing Eclipse project settings
+
+# Version Control
+**/.git             # Ignore Git directory and contents
+**/.gitignore       # Ignore Git ignore file (redundant as the .git directory is already ignored)
+
+# Docker
+**/.dockerignore    # Ignore Docker ignore file (redundant in most cases)
+**/Dockerfile*      # Ignore all Dockerfiles (be cautious, as you might want to include some Dockerfiles in context)
+
+# Environment Configurations
+**/.env             # Ignore environment variable files which may contain sensitive information
+
+# Visual Studio / .NET
+**/.vs              # Ignore Visual Studio temporary files and cache
+**/.vscode          # Ignore Visual Studio Code settings
+**/*.*proj.user     # Ignore user-specific project settings
+**/*.dbmdl          # Ignore SQL Server database project files
+**/*.jfm            # Ignore binary format file used by SQL Server
+
+# Azure Dev Spaces
+**/azds.yaml        # Ignore Azure Dev Spaces configuration file
+
+# Build Outputs
+**/bin              # Ignore binary directory
+**/obj              # Ignore object file directory
+
+# Node.js
+**/node_modules     # Ignore Node.js modules directory
+**/npm-debug.log    # Ignore npm debug log file
+
+# Docker Compose
+**/docker-compose*  # Ignore all docker-compose files (consider if you need some in context for multi-stage builds)
+
+# Helm Charts
+**/charts           # Ignore Helm chart directories
+
+# Secrets and Configurations
+**/secrets.dev.yaml # Ignore development secrets file
+**/values.dev.yaml  # Ignore Helm values file for development
+
+# Project Documentation and Licensing
+LICENSE             # Typically you want to keep the LICENSE file in your context for legal reasons
+README.md           # Keeping README.md is often desired for documentation; consider excluding this from ignore
