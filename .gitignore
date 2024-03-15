@@ -10,3 +10,17 @@ kubeadm
 
 .crt
 .key
+
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*.backup
+*.tfstate.backup
+*.tfvars
+*.tfplan
+terraform.tfstate.d/
+
+# Exclude executable and large files that don't need to be version controlled
+**/*.exe
+**/*.dll
+**/*.zip
